@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 /* Color scheme */
 :root {
     --accent: #2158E4;
-    --light: #C6CFFF;
+    --accent-hover: #225ef5;
+    --light: #eff1fe;
     --dark: #0a1a44;
     --black: #161616;
     --gray: #D0D0D1;
@@ -9,6 +13,7 @@
   
     /* Transparent Variants */
     --black-50: rgba(22, 22, 22, 0.5);
+    --transparent: rgba(208, 208, 209, 0);
   }
   
   /* General Reset */
@@ -20,6 +25,34 @@
     color: var(--gray);
     box-sizing: border-box;
   }
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--light);
+  font-size: 48px;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+}
   
   /* Header Styling */
   header {
@@ -34,9 +67,10 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 100px;
+    height: 80px;
     box-sizing: border-box;
     transition: height 0.3s ease, background-color 0.3s ease;
+    border-bottom: #4e4e4e solid 0.1px;
   }
 
   header .container {
@@ -100,51 +134,106 @@
   }
   
   nav a {
-    color: var(--white);
+    color: var(--gray);
     text-decoration: none;
     font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
   }
   
   /* Contact Button */
-  .contact-btn {
+  .prem-btn {
     background-color: var(--accent);
     color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    cursor: pointer;
   }
+
+  .second-btn {
+    background-color: var(--light);
+    color: var(--accent);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 1.5rem;
+  }
+
+  header.shrink .prem-btn {
+    padding: 5px 15px; 
+    font-size: 0.rem; 
+    border-radius: 3px; 
+}
   
   /* Hero Section */
   .hero-container {
     height: 100vh;
-    background-image: url('images/back1.png');
+    background-image: url('../images/back1.png');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
+    padding: 50px;
   }
   
   .hero-content {
-    padding: 20px;
-    border-radius: 10px;
+    max-width: 1200px;
+    width: 100%;
   }
+
+  .hero-content h1 {
+    font-size: 72px; 
+    line-height: 1.2; 
+    margin-bottom: 30px; 
+    max-width: 800px;
+    color: var(--gray);
+}
+
+  .hero-content p {
+    font-size: 18px;
+    line-height: 2; 
+    margin-top: 0;
+    margin-bottom: 60px;
+    max-width: 600px;
+}
   
   /* Cards Section */
-  .cards-container {
+  .services {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    text-align: center;
+    padding: 100px 30px;
   }
   
   .section-intro {
     grid-column: span 3;
     text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-intro h1 {
+    font-size: 48px;
+    margin: 0;
+    color: var(--white);
+  }  
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: left;
   }
   
   .card {
@@ -152,7 +241,20 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    border: #636363 solid 0.1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
   }
+
+    /* Hover Effects */
+  .card:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1; 
+  }
+
   
   .card img {
     width: 100%;
@@ -160,6 +262,7 @@
   }
   
   .card h2 {
+    font-size: 18px;
     margin: 10px 0;
     color: var(--light);
   }
@@ -167,4 +270,138 @@
   .card p {
     color: var(--gray);
   }
+
+  .read-btn {
+    background-color: var(--transparent);
+    color: var(--gray);
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-left: auto; 
+    display: block;
+  }
+
+  /* Content and Image Section */
+
+  .omoss-section {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray);
+    color: var(--black);
+    padding: 100px 30px;
+  }
+
+  .omoss-section p {
+    color: var(--dark);
+  }
+
+  .om-oss {
+    max-width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .om-oss h1 {
+    font-size: 48px;
+    margin: 0;
+    color: var(--black);
+  }
+
+  .content-image-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+    padding: 100px 30px;
+  }
+
+  /* Content Styling */
+  .content {
+    gap: 25px;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .features-list li {
+    display: flex; /* Arrange the image and div in a row */
+    align-items: flex-start; /* Align them at the top */
+    gap: 20px; /* Add some space between the image and the div */
+  }
+
+  .features-list img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover; 
+    align-self: flex-start;
+    margin-top: 15px;
+  }
+
+  .features-list div {
+    flex: 1; 
+  }
+
+  .content button {
+    margin-top: 30px;
+  }
+
+  .prem-btn:hover {
+    background-color: var(--accent-hover);
+  }
+
+  /* Image Styling */
+  .image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+    border-radius: 10px;
+  }
+/* Responsive Behavior */
+
+/* Tablets: Ensure proper layout */
+@media (max-width: 980px) {
+  .cards-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  }
   
+  .content-image-section {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container {
+    order: -1; /* Bring image above content */
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+  }
+}
+
+/* Phones: Single column */
+@media (max-width: 480px) {
+  .cards-container {
+      grid-template-columns: 1fr;
+  }
+
+  .section-intro {
+      grid-column: span 1;
+  }
+}
