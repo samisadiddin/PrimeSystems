@@ -4,7 +4,7 @@
     --light: #C6CFFF;
     --dark: #0a1a44;
     --black: #161616;
-    --gray: #F5F5F7;
+    --gray: #D0D0D1;
     --white: #FFFFFF;
   
     /* Transparent Variants */
@@ -17,7 +17,7 @@
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: var(--black);
-    color: var(--light);
+    color: var(--gray);
     box-sizing: border-box;
   }
   
@@ -117,17 +117,16 @@
   /* Hero Section */
   .hero-container {
     height: 100vh;
+    background-image: url('images/back1.png');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
   }
   
   .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
   }
