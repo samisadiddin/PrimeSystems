@@ -1,44 +1,93 @@
 /* Color scheme */
 :root {
-    --accent: #2158E4; /* Accent color */
-    --black: #161616;  /* Black */
-    --dark: #202326;   /* Dark */
-    --gray: #8D99AE;   /* Gray */
-    --light: #EDF2F4;  /* Light */
-    --white: #f5f3f4;  /* White */
+    --accent: #2158E4;
+    --light: #C6CFFF;
+    --dark: #0a1a44;
+    --black: #161616;
+    --gray: #F5F5F7;
+    --white: #FFFFFF;
+  
+    /* Transparent Variants */
+    --black-50: rgba(22, 22, 22, 0.5);
   }
   
+  /* General Reset */
   body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--light);
     box-sizing: border-box;
-    background-color: var(--dark); /* Background set to dark */
-    color: var(--light); /* Text color */
   }
   
+  /* Header Styling */
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--black); /* Header background */
-    color: var(--white);
+    background-color: var(--black-50);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100px;
+    box-sizing: border-box;
+    transition: height 0.3s ease, background-color 0.3s ease;
+  }
+
+  header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    gap: 20px;
   }
   
-  header div {
+  header.shrink {
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  header .logo {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-right: 20px;
-    margin-left: 20px;
+    gap: 10px;
+    transition: transform 0.3s ease, font-size 0.3s ease;
   }
   
   header .logo img {
     width: 60px;
-    margin-right: 10px;
+    transition: width 0.3s ease;
   }
   
+  header .site-name {
+    font-size: 24px;
+    transition: font-size 0.3s ease;
+  }
+  
+  header.shrink .logo img {
+    width: 40px;
+  }
+  
+  header.shrink .site-name {
+    font-size: 18px;
+  }
+
+  header .nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Navigation */
   nav ul {
     display: flex;
     list-style: none;
@@ -56,16 +105,16 @@
     font-size: 18px;
   }
   
+  /* Contact Button */
   .contact-btn {
-    background-color: var(--accent); /* Button color set to accent */
+    background-color: var(--accent);
     color: var(--white);
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
     border-radius: 5px;
-    margin-right: 20px;
   }
   
+  /* Hero Section */
   .hero-container {
     height: 100vh;
     background-size: cover;
@@ -83,32 +132,26 @@
     border-radius: 10px;
   }
   
-  .hero-btn {
-    margin-top: 10px;
-    background-color: var(--accent); /* Button color set to accent */
-    border: none;
-    padding: 10px 20px;
-    color: var(--white);
-    cursor: pointer;
-    border-radius: 5px;
+  /* Cards Section */
+  .cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    text-align: center;
   }
   
-  .cards-container {
-    background-color: var(--gray);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    padding: 20px;
-    gap: 20px;
+  .section-intro {
+    grid-column: span 3;
+    text-align: center;
   }
   
   .card {
-    background-color: var(--black); 
+    background-color: var(--black);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 20%;
-    text-align: left;
     padding: 15px;
   }
   
@@ -119,10 +162,10 @@
   
   .card h2 {
     margin: 10px 0;
-    color: var(--light); /* Text color */
+    color: var(--light);
   }
   
   .card p {
-    color: var(--gray); /* Paragraph text color */
+    color: var(--gray);
   }
   

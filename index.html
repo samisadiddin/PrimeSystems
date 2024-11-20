@@ -8,28 +8,30 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo" />
-      <h1>Prime Systems</h1>
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+        <h1 class="site-name">Prime Systems</h1>
+      </div>
+  
+      <!-- Navigation and Contact Button (Right Side) -->
+      <div class="nav-container">
+        <nav>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="om.html">Om oss</a></li>
+            <li><a href="tjanster.html">Tjänster</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <button class="contact-btn">Kontakta oss</button>
+      </div>
     </div>
-    <div style="width: 60%;">
-      <button class="contact-btn">Kontakta oss</button>
-    <nav>
-      <ul>
-        <li><a href="index.html">Hem</a></li>
-        <li><a href="om.html">Om oss</a></li>
-        <li><a href="tjanster.html">Tjänster</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-
-    </div>
-    
   </header>
 
-  <!-- Första container -->
+  <!-- Hero Section -->
   <section class="hero-container" style="background-image: url('images/background.jpg');">
     <div class="hero-content">
       <h1>Välkommen till Vår Webbplats</h1>
@@ -38,9 +40,9 @@
     </div>
   </section>
 
-  <!-- Andra container -->
+  <!-- Services Section -->
   <section class="cards-container">
-    <div>
+    <div class="section-intro">
       <h2>Våra Tjänster</h2>
       <p>Upptäck våra tjänster som är anpassade för att ge verkligt värde.</p>
     </div>
@@ -61,5 +63,6 @@
     </div>
   </section>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
