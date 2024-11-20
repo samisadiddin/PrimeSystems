@@ -1,8 +1,20 @@
-body, html {
+/* Color scheme */
+:root {
+    --accent: #2158E4; /* Accent color */
+    --black: #161616;  /* Black */
+    --dark: #202326;   /* Dark */
+    --gray: #8D99AE;   /* Gray */
+    --light: #EDF2F4;  /* Light */
+    --white: #f5f3f4;  /* White */
+  }
+  
+  body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
+    background-color: var(--dark); /* Background set to dark */
+    color: var(--light); /* Text color */
   }
   
   header {
@@ -10,18 +22,28 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--black); /* Header background */
+    color: var(--white);
+  }
+  
+  header div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    margin-left: 20px;
   }
   
   header .logo img {
-    height: 50px;
+    width: 60px;
+    margin-right: 10px;
   }
   
   nav ul {
     display: flex;
     list-style: none;
     padding: 0;
+    margin: 0;
   }
   
   nav li {
@@ -29,18 +51,19 @@ body, html {
   }
   
   nav a {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     font-size: 18px;
   }
   
   .contact-btn {
-    background-color: #ff9800;
-    color: #fff;
+    background-color: var(--accent); /* Button color set to accent */
+    color: var(--white);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    margin-right: 20px;
   }
   
   .hero-container {
@@ -51,7 +74,7 @@ body, html {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: var(--white);
   }
   
   .hero-content {
@@ -62,28 +85,30 @@ body, html {
   
   .hero-btn {
     margin-top: 10px;
-    background-color: #ff9800;
+    background-color: var(--accent); /* Button color set to accent */
     border: none;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--white);
     cursor: pointer;
     border-radius: 5px;
   }
   
   .cards-container {
+    background-color: var(--gray);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     padding: 20px;
+    gap: 20px;
   }
   
   .card {
-    background-color: #f5f5f5;
+    background-color: var(--black); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    text-align: center;
+    width: 20%;
+    text-align: left;
     padding: 15px;
   }
   
@@ -94,9 +119,10 @@ body, html {
   
   .card h2 {
     margin: 10px 0;
+    color: var(--light); /* Text color */
   }
   
   .card p {
-    color: #555;
+    color: var(--gray); /* Paragraph text color */
   }
   
