@@ -492,7 +492,8 @@ p {
 
   .fullscreen-menu .close-btn {
     display: block;
-    margin: 10vh auto;
+    margin: auto;
+    margin-top: 20px;
     font-size: 28px;
     color: var(--black);
     background: var(--gray);
