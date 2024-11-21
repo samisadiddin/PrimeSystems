@@ -428,10 +428,10 @@ p {
   .fullscreen-menu {
     position: fixed;
     top: 0;
-    left: 100%; /* Start off-screen */
+    right: 100%; /* Start off-screen */
     width: 100%;
     height: 100vh;
-    background-color: var(--black);
+    background-color: var(--black-90);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -444,23 +444,24 @@ p {
   }
 
   .fullscreen-menu.active {
-    left: 0; /* Slide menu in */
+    right: 0; /* Slide menu in */
   }
 
-  .fullscreen-menu .logo {
+  .fullscreen-menu .logo-mobile-menu {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 10px;
     justify-content: center; /* Center the logo horizontally */
-    margin-bottom: 40px; /* Add spacing below logo */
+    padding-bottom: 30px; /* Add spacing below logo */
+    border-bottom: solid 0.1px var(--gray);
   }
 
-  .fullscreen-menu .logo img {
-    width: 60px; /* Adjust logo size for fullscreen menu */
+  .fullscreen-menu .logo-mobile-menu img {
+    width: 60px; 
   }
   
-  .fullscreen-menu .site-name {
+  .fullscreen-menu .logo-mobile-menu .site-name {
     font-size: 24px;
   }
 
