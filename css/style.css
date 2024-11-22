@@ -7,7 +7,7 @@
     --accent-hover: #225ef5;
     --light: #eff1fe;
     --dark: #0a1a44;
-    --black: #161616;
+    --black: #0a0a0a;
     --gray: #D0D0D1;
     --white: #FFFFFF;
   
@@ -15,6 +15,10 @@
     --black-50: rgba(22, 22, 22, 0.5);
     --black-90: rgba(0, 0, 0, 0.6);
     --transparent: rgba(208, 208, 209, 0);
+
+    /* Gradients */
+    --background: linear-gradient(to bottom,#2158e4 0%, #2158e49c 5%, #161616 25%, #161616 100%);
+    --gradient-light: linear-gradient(to bottom, var(--white) 0%, var(--gray) 50%);
   }
   
   /* General Reset */
@@ -89,8 +93,16 @@ p {
     align-items: center;
     gap: 10px;
   }
+
+  header .logo a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
   
-  header .logo img {
+  header .logo a img {
     width: 40px;
   }
 
@@ -98,32 +110,60 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 20px;
   }
 
   /* Navigation */
-  nav ul {
+
+  .nav-container nav {
+    overflow: hidden;
+  }
+
+  .nav-container nav ul {
+    height: 45px;
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 5px;
     list-style: none;
     padding: 0;
     margin: 0;
   }
+
+  .nav-container nav li {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.1s ease-in-out;
+  }
+
+  .nav-container nav li:hover {
+    background-color:#3737375a;
+  }
   
-  nav a {
+  .nav-container nav a {
     color: var(--light);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
     text-decoration: none;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     transition: 0.1s ease-in-out;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  nav a:hover {
+  .nav-container nav a:hover {
+    background-color: var(--transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--accent);
+    font-weight: 500;
   }
   
   /* Contact Button */
@@ -166,7 +206,7 @@ p {
   /* Hero Section */
   .hero-container {
     height: 100vh;
-    background-image: url('../images/back1.png');
+    background: var(--background);
     background-size: cover;
     background-position: center;
     display: flex;
