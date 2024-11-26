@@ -162,7 +162,7 @@ p {
     background-color: var(--transparent);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    color: var(--accent);
+    color: #1155ff;
     font-weight: 500;
   }
   
